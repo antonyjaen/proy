@@ -58,6 +58,14 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         pcen = new javax.swing.JPanel();
+        pventas = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtprodv1 = new javax.swing.JTextField();
+        txtprodv2 = new javax.swing.JTextField();
+        jTextPane1 = new javax.swing.JTextPane();
         plog = new javax.swing.JPanel();
         lblnom = new javax.swing.JLabel();
         lblnom1 = new javax.swing.JLabel();
@@ -119,17 +127,128 @@ public class Main extends javax.swing.JFrame {
         jPanel3.add(panelIZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 260, 730));
 
         pcen.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pventas.setBackground(new java.awt.Color(238, 238, 221));
+        pventas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(238, 238, 221));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setForeground(new java.awt.Color(102, 102, 102));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Descripcion :");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Cantidad :");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Codigo:");
+
+        txtprodv1.setBackground(new java.awt.Color(238, 238, 221));
+        txtprodv1.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        txtprodv1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtprodv1.setCaretColor(new java.awt.Color(51, 51, 51));
+        txtprodv1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtprodv1ActionPerformed(evt);
+            }
+        });
+        txtprodv1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtprodv1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtprodv1KeyTyped(evt);
+            }
+        });
+
+        txtprodv2.setBackground(new java.awt.Color(238, 238, 221));
+        txtprodv2.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        txtprodv2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtprodv2.setCaretColor(new java.awt.Color(51, 51, 51));
+        txtprodv2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtprodv2ActionPerformed(evt);
+            }
+        });
+        txtprodv2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtprodv2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtprodv2KeyTyped(evt);
+            }
+        });
+
+        jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jTextPane1.setAutoscrolls(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(101, 101, 101)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtprodv2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtprodv1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtprodv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(txtprodv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jTextPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pventas.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 600, 510));
+
+        pcen.add(pventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1150, 740));
+
         jPanel3.add(pcen, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 70, 1090, 730));
 
         plog.setBackground(new java.awt.Color(0, 0, 0));
+        plog.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblnom.setFont(new java.awt.Font("Segoe UI Symbol", 0, 24)); // NOI18N
         lblnom.setForeground(new java.awt.Color(255, 255, 255));
         lblnom.setText("Contraseña");
+        plog.add(lblnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 239, 150, 30));
 
         lblnom1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 24)); // NOI18N
         lblnom1.setForeground(new java.awt.Color(255, 255, 255));
         lblnom1.setText("Usuario");
+        plog.add(lblnom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 128, 107, 30));
 
         txtpass.setBackground(new java.awt.Color(0, 0, 0));
         txtpass.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
@@ -149,6 +268,7 @@ public class Main extends javax.swing.JFrame {
                 txtpassKeyTyped(evt);
             }
         });
+        plog.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 201, -1));
 
         txtuser.setBackground(new java.awt.Color(51, 51, 51));
         txtuser.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
@@ -168,6 +288,7 @@ public class Main extends javax.swing.JFrame {
                 txtuserKeyTyped(evt);
             }
         });
+        plog.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 201, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/plantilla-login_1017-6719.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -182,42 +303,7 @@ public class Main extends javax.swing.JFrame {
                 jLabel2MouseExited(evt);
             }
         });
-
-        javax.swing.GroupLayout plogLayout = new javax.swing.GroupLayout(plog);
-        plog.setLayout(plogLayout);
-        plogLayout.setHorizontalGroup(
-            plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(plogLayout.createSequentialGroup()
-                .addGroup(plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(plogLayout.createSequentialGroup()
-                        .addGap(239, 239, 239)
-                        .addGroup(plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblnom, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblnom1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(plogLayout.createSequentialGroup()
-                        .addGap(316, 316, 316)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(256, Short.MAX_VALUE))
-        );
-        plogLayout.setVerticalGroup(
-            plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(plogLayout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addGroup(plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblnom1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75)
-                .addGroup(plogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblnom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80)
-                .addComponent(jLabel2)
-                .addContainerGap(168, Short.MAX_VALUE))
-        );
+        plog.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 349, 197, -1));
 
         jPanel3.add(plog, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 850, 560));
 
@@ -342,10 +428,35 @@ int xx,xy;
     }//GEN-LAST:event_pvenMouseExited
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       lblicon.setVisible(true);
-       plog.setVisible(false);
+        lblicon.setVisible(true);
+         plog.setVisible(false);
          pcen.setVisible(true);
+         lblimg.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void txtprodv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprodv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprodv1ActionPerformed
+
+    private void txtprodv1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprodv1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprodv1KeyReleased
+
+    private void txtprodv1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprodv1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprodv1KeyTyped
+
+    private void txtprodv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprodv2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprodv2ActionPerformed
+
+    private void txtprodv2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprodv2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprodv2KeyReleased
+
+    private void txtprodv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprodv2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprodv2KeyTyped
 
     /**
      * @param args the command line arguments
@@ -387,7 +498,12 @@ int xx,xy;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel lblicon;
     private javax.swing.JLabel lblimg;
     private javax.swing.JLabel lblnom;
@@ -397,7 +513,10 @@ int xx,xy;
     private javax.swing.JPanel pcen;
     private javax.swing.JPanel plog;
     private javax.swing.JPanel pven;
+    private javax.swing.JPanel pventas;
     private javax.swing.JTextField txtpass;
+    private javax.swing.JTextField txtprodv1;
+    private javax.swing.JTextField txtprodv2;
     private javax.swing.JTextField txtuser;
     // End of variables declaration//GEN-END:variables
 }

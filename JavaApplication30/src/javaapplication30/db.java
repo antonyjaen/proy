@@ -31,6 +31,7 @@ public class db {
             Date date = new Date();    
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             String fe = ""+dateFormat.format(date);
+            
             DBObject prod = new BasicDBObject("_id",cod)//codigo
             .append("desc",des)//descripcion       
             .append("fecha",fe)//fecha sin la hora
@@ -55,10 +56,10 @@ public class db {
         }
     }
     public static void main(String[] args) {
-        Main ok = new Main();
+       Main ok = new Main();
         ok.setVisible(true);
-       //db ok = new db();
-       //ok.SubirControl("68","3",3);
-       //ok.SubirVenta("68","3",3);
+       /*db ok = new db();
+       ok.SubirControl("68","3",3);
+       ok.SubirVenta("68","3",3);*/
     }
 }
