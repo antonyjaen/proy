@@ -22,6 +22,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    boolean v = false;
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -45,7 +46,13 @@ public class Main extends javax.swing.JFrame {
         Icon ics2 = new ImageIcon(ic2.getImage().getScaledInstance(lblimg.getWidth(),lblimg.getHeight(), Image.SCALE_DEFAULT));
         lblimg.setIcon(ics2);
         
+        ImageIcon ic3 = new ImageIcon(getClass().getResource("/img/fn.jpeg"));
+        Icon ics3 = new ImageIcon(ic3.getImage().getScaledInstance(lblimg1.getWidth(),lblimg1.getHeight(), Image.SCALE_DEFAULT));
+        lblimg1.setIcon(ics3);
+        
+        
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,12 +89,14 @@ public class Main extends javax.swing.JFrame {
         txtprodv9 = new javax.swing.JTextField();
         txtprodv10 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        lblimg1 = new javax.swing.JLabel();
         plog = new javax.swing.JPanel();
         lblnom = new javax.swing.JLabel();
         lblnom1 = new javax.swing.JLabel();
-        txtpass = new javax.swing.JTextField();
         txtuser = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtpass = new javax.swing.JPasswordField();
         panelAR = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         lblicon = new javax.swing.JLabel();
@@ -398,6 +407,7 @@ public class Main extends javax.swing.JFrame {
         pcont3.add(pvent1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
 
         pcosas.add(pcont3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 620, 560));
+        pcosas.add(lblimg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 730));
 
         pcen.add(pcosas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 1160, 730));
 
@@ -409,34 +419,14 @@ public class Main extends javax.swing.JFrame {
         lblnom.setFont(new java.awt.Font("Segoe UI Symbol", 0, 24)); // NOI18N
         lblnom.setForeground(new java.awt.Color(255, 255, 255));
         lblnom.setText("Contraseña");
-        plog.add(lblnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 239, 150, 30));
+        plog.add(lblnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 239, -1, 30));
 
         lblnom1.setFont(new java.awt.Font("Segoe UI Symbol", 0, 24)); // NOI18N
         lblnom1.setForeground(new java.awt.Color(255, 255, 255));
         lblnom1.setText("Usuario");
-        plog.add(lblnom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 128, 107, 30));
+        plog.add(lblnom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 120, 30));
 
-        txtpass.setBackground(new java.awt.Color(0, 0, 0));
-        txtpass.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
-        txtpass.setForeground(new java.awt.Color(255, 255, 255));
-        txtpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        txtpass.setCaretColor(new java.awt.Color(51, 51, 51));
-        txtpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtpassActionPerformed(evt);
-            }
-        });
-        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtpassKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtpassKeyTyped(evt);
-            }
-        });
-        plog.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 201, -1));
-
-        txtuser.setBackground(new java.awt.Color(51, 51, 51));
+        txtuser.setBackground(new java.awt.Color(0, 0, 0));
         txtuser.setFont(new java.awt.Font("Yu Gothic Medium", 0, 18)); // NOI18N
         txtuser.setForeground(new java.awt.Color(255, 255, 255));
         txtuser.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
@@ -454,7 +444,7 @@ public class Main extends javax.swing.JFrame {
                 txtuserKeyTyped(evt);
             }
         });
-        plog.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 201, -1));
+        plog.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, 201, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/plantilla-login_1017-6719.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -470,6 +460,25 @@ public class Main extends javax.swing.JFrame {
             }
         });
         plog.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 349, 197, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-show-password-30.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        plog.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 240, 30, 30));
+
+        txtpass.setBackground(new java.awt.Color(0, 0, 0));
+        txtpass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtpass.setForeground(new java.awt.Color(255, 255, 255));
+        txtpass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        txtpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpassActionPerformed(evt);
+            }
+        });
+        plog.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 200, 30));
 
         jPanel3.add(plog, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 850, 570));
 
@@ -562,18 +571,6 @@ int xx,xy;
     private void lbliconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbliconMouseClicked
         iz();
     }//GEN-LAST:event_lbliconMouseClicked
-
-    private void txtpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtpassActionPerformed
-
-    private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
-        
-    }//GEN-LAST:event_txtpassKeyReleased
-
-    private void txtpassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyTyped
-
-    }//GEN-LAST:event_txtpassKeyTyped
 
     private void txtuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuserActionPerformed
         // TODO add your handling code here:
@@ -684,6 +681,19 @@ int xx,xy;
        lblpag.setText("Control de Produccion");
     }//GEN-LAST:event_pven1MouseClicked
 
+    private void txtpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpassActionPerformed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        v =!v;
+         if (v==true) {
+            txtpass.setEchoChar((char)0); //password = JPasswordField
+         } else {
+            txtpass.setEchoChar('\u25cf');
+   }
+    }//GEN-LAST:event_jLabel5MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -734,11 +744,13 @@ int xx,xy;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextPane jTextPane4;
     private javax.swing.JTextPane jTextPane5;
     private javax.swing.JLabel lblicon;
     private javax.swing.JLabel lblimg;
+    private javax.swing.JLabel lblimg1;
     private javax.swing.JLabel lblnom;
     private javax.swing.JLabel lblnom1;
     private javax.swing.JLabel lblpag;
@@ -752,7 +764,7 @@ int xx,xy;
     private javax.swing.JPanel pven;
     private javax.swing.JPanel pven1;
     private javax.swing.JPanel pvent1;
-    private javax.swing.JTextField txtpass;
+    private javax.swing.JPasswordField txtpass;
     private javax.swing.JTextField txtprodv10;
     private javax.swing.JTextField txtprodv7;
     private javax.swing.JTextField txtprodv8;
