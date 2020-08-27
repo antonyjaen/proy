@@ -20,8 +20,7 @@ import javax.swing.JOptionPane;
 public class db {
     MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://uqumwigyfcmdecu29uiz:8fRQRwxgMMbf7tjwqdKm@bv0d58maiskw13w-mongodb.services.clever-cloud.com:27017/bv0d58maiskw13w"));
     DB database = (DB) mongoClient.getDB("bv0d58maiskw13w");
-    
-    DBCollection control = database.getCollection("control");
+    DBCollection trabajadores= database.getCollection("trabajadores");
     DBCollection ventas = database.getCollection("ventas");
     DBCollection facturacion = database.getCollection("facturacion");
     DBCollection inventario = database.getCollection("inventario");
@@ -37,11 +36,42 @@ public class db {
             .append("desc",des)//descripcion       
             .append("fecha",fe)//fecha sin la hora
             .append("cantidad",cantidad);//cantidad de produccion
-            control.insert(prod);
+            clientes.insert(prod);
+            JOptionPane.showMessageDialog(null, "agregado");
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "error en los datos");//por si se ingresa un priary key repetido
         }
     }
+    
+     public void agregartrab(String id,String nom,String us,String pass,String sueldo) {
+        try {
+            Date date = new Date();    
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String fe = ""+dateFormat.format(date);
+            
+            DBObject tra = new BasicDBObject("_id",id)
+            .append("nombre",nom)      
+            .append("usuario",us)
+            .append("pass",pass)
+            .append("sueldo",sueldo)
+            .append("fecha",fe);
+            trabajadores.insert(tra);
+            JOptionPane.showMessageDialog(null, "agregado");
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "error en los datos");//por si se ingresa un priary key repetido
+        }
+    }
+    public int log(String us,String pas){
+    BasicDBObject query = new BasicDBObject();
+        query.put("usuario",us);  
+        query.put("pass",pas);
+        DBCursor cursor = trabajadores.find(query);
+        return cursor.count();
+        
+        //Icon ic = new ImageIcon((byte[])cursor.one().get("data"));
+    }
+    
+    
     public void SubirVenta(String cod,String des,int cantidad) {
         try {
             Date date = new Date();    
