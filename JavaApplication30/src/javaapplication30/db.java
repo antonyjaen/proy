@@ -55,7 +55,12 @@ public class db {
                 .append("tipo",tip)
                 .append("fecha",fe);
             inventario.insert(prod);
-            JOptionPane.showMessageDialog(null, "Agregado");
+            if (cant<0) {
+                JOptionPane.showMessageDialog(null, "Agregado");
+            }else{
+                JOptionPane.showMessageDialog(null, "Vendido");
+            }
+            
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Error en los datos");//por si se ingresa un priary key repetido
         }
@@ -89,7 +94,7 @@ public class db {
         
         //Icon ic = new ImageIcon((byte[])cursor.one().get("data"));
     }
-    
+    /*
      public Object[][] imglis() throws IOException{
         DBCursor cur = trabajadores.find();
         Object[][] list = new Object[(int)trabajadores.count()+1][3];
@@ -102,7 +107,7 @@ public class db {
             list[con][2] =(String) datos.get("sueldo");
         }
         return list;
-    }
+    }*/
         public void tab(JTable tab){
         DBCursor cur = trabajadores.find();
         DefaultTableModel dt = (DefaultTableModel) tab.getModel();
