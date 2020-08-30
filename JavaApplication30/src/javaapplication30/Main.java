@@ -16,6 +16,7 @@ import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
@@ -627,6 +628,8 @@ public class Main extends javax.swing.JFrame {
         pffac.add(jLabel9);
         jLabel9.setBounds(540, 10, 20, 20);
 
+        btfac.setBackground(new java.awt.Color(0, 0, 153));
+        btfac.setForeground(new java.awt.Color(255, 255, 255));
         btfac.setText("Vender");
         btfac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -634,7 +637,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
         pffac.add(btfac);
-        btfac.setBounds(180, 280, 160, 70);
+        btfac.setBounds(210, 290, 130, 50);
 
         pinfofac.add(pffac);
         pffac.setBounds(20, 20, 570, 480);
@@ -796,7 +799,7 @@ public class Main extends javax.swing.JFrame {
     pfac.add(pclientefac);
     pclientefac.setBounds(0, 0, 600, 520);
 
-    pcont3.add(pfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 600, 530));
+    pcont3.add(pfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 600, 520));
 
     pcosas.add(pcont3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 90, 620, 560));
 
@@ -1248,12 +1251,14 @@ public void fa(){
     }//GEN-LAST:event_txtbus2txtprodv2ActionPerformed
 
     private void txtbus2txtprodv2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbus2txtprodv2KeyReleased
-        /*limpiar2();
+        limpiar2();
+        String p = cmbtipofac1.getSelectedItem().toString();
+        //dab.tab2(tabla1,"escritorios",txtc,txtbus2);
         if(txtbus2.getText().equalsIgnoreCase("")){
-            tab();
+            dab.tab2(tabla1,p,txtc,txtbus2);
         }else{
-            dab.EscribirClienteBusqueda(tabla,txtbus.getText());
-        }*/
+            dab.EscribirProductoBusqueda(tabla1, txtbus2.getText(),p);
+        }
     }//GEN-LAST:event_txtbus2txtprodv2KeyReleased
 
     private void txtbus2txtprodv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtbus2txtprodv2KeyTyped

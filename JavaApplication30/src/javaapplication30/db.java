@@ -130,11 +130,11 @@ public class db {
         tab.setModel(dt);
         tab.setRowHeight(64);
     }
+        
         public void tab2(JTable tab,String tip,JLabel txtc,JTextField txtbus2){
         BasicDBObject query = new BasicDBObject();
         query.put("tipo",tip);  
         DBCursor cur = inventario.find(query);
-            System.out.println("es : "+cur.count());
             if (cur.count()==0) {
                 JOptionPane.showMessageDialog(null, "No hay Stuck");
                 txtc.setVisible(false);
@@ -171,11 +171,9 @@ public class db {
       public void EscribirClienteBusqueda(JTable tabla, String bus) {
         DBCursor cur = trabajadores.find();
         Object[] list = new Object[3];
-        int con=0;
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         while (cur.hasNext()){
             int pas = 0;
-            con++;
             BasicDBObject datos = new BasicDBObject((BasicDBObject)cur.next());
             list[0]=(String) datos.get("_id");
             list[1] =(String) datos.get("nombre");
@@ -197,7 +195,35 @@ public class db {
             }
         }
     }
-    
+     public void EscribirProductoBusqueda(JTable tabla, String bus,String tip) {
+        BasicDBObject query = new BasicDBObject();
+        query.put("tipo",tip);
+        DBCursor cur = inventario.find(query);
+        Object[] list = new Object[4];
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        while (cur.hasNext()){
+            int pas = 0;
+            BasicDBObject datos = new BasicDBObject((BasicDBObject)cur.next());
+            list[0]=(String) datos.get("_id");
+            list[1] =(String) datos.get("desc");
+            list[3] =(String) datos.get("precio");
+            list[2] =(String) datos.get("cantidad");
+            String pal = list[0].toString();
+            int largo2 = pal.length();
+            int largo = bus.length();
+            if (largo <= largo2) {
+                for (int i = 0; i < largo; i++) {
+                    if (pal.substring(i, i + 1).equalsIgnoreCase(bus.substring(i, i + 1))) {
+                        pas++;
+                    }
+                }
+            }
+            if (pas == largo) {
+                modelo.addRow(list);
+                tabla.setModel(modelo);
+            }
+        }
+    }
     
     public void SubirVenta(String cod,String des,int cantidad) {
         try {
