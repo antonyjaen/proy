@@ -13,7 +13,6 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -22,6 +21,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+
 public class db {
     MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://uqumwigyfcmdecu29uiz:8fRQRwxgMMbf7tjwqdKm@bv0d58maiskw13w-mongodb.services.clever-cloud.com:27017/bv0d58maiskw13w"));
     DB database = (DB) mongoClient.getDB("bv0d58maiskw13w");
@@ -42,6 +43,7 @@ public class db {
             DBCursor cursor = inventario.find(query);
             
             int cant=Integer.parseInt(cantidad);
+            int ca=Integer.parseInt(cantidad);
             if (cursor.count()==1) {
                 System.out.println("la cant es "+cant);
                 String can = (String)cursor.one().get("cantidad");
@@ -55,12 +57,11 @@ public class db {
                 .append("tipo",tip)
                 .append("fecha",fe);
             inventario.insert(prod);
-            if (cant<0) {
+            if (ca>0) {
                 JOptionPane.showMessageDialog(null, "Agregado");
             }else{
                 JOptionPane.showMessageDialog(null, "Vendido");
             }
-            
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Error en los datos");//por si se ingresa un priary key repetido
         }
@@ -72,6 +73,14 @@ public class db {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             String fe = ""+dateFormat.format(date);
             
+            BasicDBObject query = new BasicDBObject();
+            query.put("_id",id);  
+            DBCursor cursor = trabajadores.find(query);
+            int v = cursor.count();
+            if (v==1) {
+                trabajadores.remove(query);
+            }
+            
             DBObject tra = new BasicDBObject("_id",id)
             .append("nombre",nom)      
             .append("usuario",us)
@@ -79,7 +88,43 @@ public class db {
             .append("sueldo",sueldo)
             .append("fecha",fe);
             trabajadores.insert(tra);
-            JOptionPane.showMessageDialog(null, "Agregado");
+            if (v==1) {
+              JOptionPane.showMessageDialog(null, "Actualizado");  
+            }else{
+                JOptionPane.showMessageDialog(null, "Agregado");
+            }
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Error en los datos");//por si se ingresa un priary key repetido
+        }
+    }
+     public void agregarCli(String id,String nom,String correo,String num) {
+        try {
+            Date date = new Date();    
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String fe = ""+dateFormat.format(date);
+            
+            BasicDBObject query = new BasicDBObject();
+            query.put("_id",id);  
+            DBCursor cursor = clientes.find(query);
+            int v = cursor.count();
+            if (v==1) {
+                clientes.remove(query);
+            }
+            
+            DBObject tra = new BasicDBObject("_id",id)
+            .append("nombre",nom)    
+            .append("correo",correo)
+            .append("numero",num)
+            .append("fecha",fe);
+            
+            clientes.insert(tra);
+            if (v==1) {
+              JOptionPane.showMessageDialog(null, "Actualizado");  
+            }else{
+                JOptionPane.showMessageDialog(null, "Agregado");
+            }
+            
+            
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Error en los datos");//por si se ingresa un priary key repetido
         }
@@ -91,8 +136,6 @@ public class db {
         query.put("pass",pas);
         DBCursor cursor = trabajadores.find(query);
         return cursor.count();
-        
-        //Icon ic = new ImageIcon((byte[])cursor.one().get("data"));
     }
     /*
      public Object[][] imglis() throws IOException{
@@ -109,27 +152,28 @@ public class db {
         return list;
     }*/
         public void tab(JTable tab){
-        DBCursor cur = trabajadores.find();
+        DBCursor cur = clientes.find();
         DefaultTableModel dt = (DefaultTableModel) tab.getModel();
         int con=0;
         while (cur.hasNext()){
             con++;
-            Object[] fila = new Object[3];
+            Object[] fila = new Object[4];
             
-            String nom,id,sueldo;
+            String nom,id,cor,num;
             BasicDBObject datos = new BasicDBObject((BasicDBObject)cur.next());
             id=(String) datos.get("_id");
             nom=(String) datos.get("nombre");
-            sueldo =(String) datos.get("sueldo");
-                //"              "
+            cor=(String) datos.get("correo");
+            num=(String) datos.get("numero");
             fila[0]=id;
             fila[1]=nom;
-            fila[2]= sueldo;
+            fila[2]= cor;
+            fila[3]= num;
             dt.addRow(fila);
         }
         tab.setModel(dt);
         tab.setRowHeight(64);
-    }
+    } 
         
         public void tab2(JTable tab,String tip,JLabel txtc,JTextField txtbus2){
         BasicDBObject query = new BasicDBObject();
@@ -167,18 +211,17 @@ public class db {
                 tab.setVisible(true);
             }
     }
-        
       public void EscribirClienteBusqueda(JTable tabla, String bus) {
-        DBCursor cur = trabajadores.find();
-        Object[] list = new Object[3];
+        DBCursor cur = clientes.find();
+        Object[] list = new Object[4];
         DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
         while (cur.hasNext()){
             int pas = 0;
             BasicDBObject datos = new BasicDBObject((BasicDBObject)cur.next());
             list[0]=(String) datos.get("_id");
             list[1] =(String) datos.get("nombre");
-            list[2] =(String) datos.get("sueldo");
-            
+            list[3] =(String) datos.get("correo");
+            list[2] =(String) datos.get("numero");
             String pal = list[0].toString();
             int largo2 = pal.length();
             int largo = bus.length();
@@ -224,7 +267,6 @@ public class db {
             }
         }
     }
-    
     public void SubirVenta(String cod,String des,int cantidad) {
         try {
             Date date = new Date();    

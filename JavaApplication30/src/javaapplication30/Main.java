@@ -70,6 +70,10 @@ public class Main extends javax.swing.JFrame {
         Icon ics3 = new ImageIcon(ic3.getImage().getScaledInstance(lblimg1.getWidth(),lblimg1.getHeight(), Image.SCALE_DEFAULT));
         lblimg1.setIcon(ics3);
         
+        
+        
+        
+        
         pinfofac.setVisible(false);
     }
     public void limpiar(){
@@ -120,17 +124,32 @@ public class Main extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         txtpreciocon = new javax.swing.JTextField();
         ptrabadd = new javax.swing.JPanel();
+        pclii = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        txtpassadd1 = new javax.swing.JTextField();
+        txtuseradd1 = new javax.swing.JTextField();
+        txtnomcli = new javax.swing.JTextField();
+        txtidencli = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        pus = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         txtpassadd = new javax.swing.JTextField();
         txtuseradd = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
-        jLabel23 = new javax.swing.JLabel();
         txtsueldoadd = new javax.swing.JTextField();
         txtnomadd = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
         txtidenadd = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         pfac = new javax.swing.JPanel();
         pinfofac = new javax.swing.JPanel();
         pffac = new javax.swing.JPanel();
@@ -413,23 +432,180 @@ public class Main extends javax.swing.JFrame {
         ptrabadd.setBackground(new java.awt.Color(238, 238, 221));
         ptrabadd.setLayout(null);
 
+        pclii.setBackground(new java.awt.Color(238, 238, 221));
+        pclii.setLayout(null);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel27.setText("Numero:");
+        pclii.add(jLabel27);
+        jLabel27.setBounds(120, 230, 190, 40);
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel32.setText("Correo :");
+        pclii.add(jLabel32);
+        jLabel32.setBounds(120, 180, 192, 37);
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel33.setText("Nombre :");
+        pclii.add(jLabel33);
+        jLabel33.setBounds(120, 70, 180, 40);
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel35.setText("Cedula :");
+        pclii.add(jLabel35);
+        jLabel35.setBounds(120, 120, 200, 50);
+
+        jButton6.setBackground(new java.awt.Color(51, 51, 255));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Listo");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        pclii.add(jButton6);
+        jButton6.setBounds(180, 310, 160, 80);
+
+        txtpassadd1.setBackground(new java.awt.Color(238, 238, 221));
+        txtpassadd1.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        txtpassadd1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtpassadd1.setCaretColor(new java.awt.Color(51, 51, 51));
+        txtpassadd1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpassadd1txtprodv1ActionPerformed(evt);
+            }
+        });
+        txtpassadd1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtpassadd1txtprodv1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtpassadd1txtprodv1KeyTyped(evt);
+            }
+        });
+        pclii.add(txtpassadd1);
+        txtpassadd1.setBounds(260, 180, 180, 41);
+
+        txtuseradd1.setBackground(new java.awt.Color(238, 238, 221));
+        txtuseradd1.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        txtuseradd1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtuseradd1.setCaretColor(new java.awt.Color(51, 51, 51));
+        txtuseradd1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtuseradd1txtprodv2ActionPerformed(evt);
+            }
+        });
+        txtuseradd1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtuseradd1txtprodv2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtuseradd1txtprodv2KeyTyped(evt);
+            }
+        });
+        pclii.add(txtuseradd1);
+        txtuseradd1.setBounds(260, 230, 180, 41);
+
+        txtnomcli.setBackground(new java.awt.Color(238, 238, 221));
+        txtnomcli.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        txtnomcli.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtnomcli.setCaretColor(new java.awt.Color(51, 51, 51));
+        txtnomcli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnomclitxtprodv1ActionPerformed(evt);
+            }
+        });
+        txtnomcli.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtnomclitxtprodv1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnomclitxtprodv1KeyTyped(evt);
+            }
+        });
+        pclii.add(txtnomcli);
+        txtnomcli.setBounds(260, 70, 180, 41);
+
+        txtidencli.setBackground(new java.awt.Color(238, 238, 221));
+        txtidencli.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
+        txtidencli.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        txtidencli.setCaretColor(new java.awt.Color(51, 51, 51));
+        txtidencli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidenclitxtprodv1ActionPerformed(evt);
+            }
+        });
+        txtidencli.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtidenclitxtprodv1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidenclitxtprodv1KeyTyped(evt);
+            }
+        });
+        pclii.add(txtidencli);
+        txtidencli.setBounds(260, 120, 180, 41);
+
+        jLabel38.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel38.setText("X");
+        jLabel38.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel38MouseClicked(evt);
+            }
+        });
+        pclii.add(jLabel38);
+        jLabel38.setBounds(540, 10, 20, 20);
+
+        ptrabadd.add(pclii);
+        pclii.setBounds(0, 0, 580, 470);
+
+        pus.setBackground(new java.awt.Color(238, 238, 221));
+        pus.setLayout(null);
+
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(51, 51, 51));
         jLabel19.setText("Usuario:");
-        ptrabadd.add(jLabel19);
-        jLabel19.setBounds(30, 30, 111, 40);
+        pus.add(jLabel19);
+        jLabel19.setBounds(70, 60, 111, 40);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(51, 51, 51));
         jLabel20.setText("Contraseña :");
-        ptrabadd.add(jLabel20);
-        jLabel20.setBounds(30, 90, 192, 37);
+        pus.add(jLabel20);
+        jLabel20.setBounds(70, 120, 192, 37);
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(51, 51, 51));
         jLabel21.setText("Nombre :");
-        ptrabadd.add(jLabel21);
-        jLabel21.setBounds(30, 150, 180, 50);
+        pus.add(jLabel21);
+        jLabel21.setBounds(70, 180, 180, 50);
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel23.setText("Sueldo :");
+        pus.add(jLabel23);
+        jLabel23.setBounds(70, 300, 180, 50);
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel24.setText("Identificacion :");
+        pus.add(jLabel24);
+        jLabel24.setBounds(70, 240, 200, 50);
+
+        jButton5.setBackground(new java.awt.Color(51, 51, 255));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Listo");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        pus.add(jButton5);
+        jButton5.setBounds(190, 400, 114, 50);
 
         txtpassadd.setBackground(new java.awt.Color(238, 238, 221));
         txtpassadd.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
@@ -448,8 +624,8 @@ public class Main extends javax.swing.JFrame {
                 txtpassaddtxtprodv1KeyTyped(evt);
             }
         });
-        ptrabadd.add(txtpassadd);
-        txtpassadd.setBounds(250, 80, 179, 41);
+        pus.add(txtpassadd);
+        txtpassadd.setBounds(290, 120, 179, 41);
 
         txtuseradd.setBackground(new java.awt.Color(238, 238, 221));
         txtuseradd.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
@@ -468,25 +644,8 @@ public class Main extends javax.swing.JFrame {
                 txtuseraddtxtprodv2KeyTyped(evt);
             }
         });
-        ptrabadd.add(txtuseradd);
-        txtuseradd.setBounds(250, 30, 179, 41);
-
-        jButton5.setBackground(new java.awt.Color(51, 51, 255));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Listo");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        ptrabadd.add(jButton5);
-        jButton5.setBounds(140, 350, 114, 50);
-
-        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel23.setText("Sueldo :");
-        ptrabadd.add(jLabel23);
-        jLabel23.setBounds(30, 270, 180, 50);
+        pus.add(txtuseradd);
+        txtuseradd.setBounds(290, 60, 179, 41);
 
         txtsueldoadd.setBackground(new java.awt.Color(238, 238, 221));
         txtsueldoadd.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
@@ -505,8 +664,8 @@ public class Main extends javax.swing.JFrame {
                 txtsueldoaddtxtprodv1KeyTyped(evt);
             }
         });
-        ptrabadd.add(txtsueldoadd);
-        txtsueldoadd.setBounds(250, 270, 179, 41);
+        pus.add(txtsueldoadd);
+        txtsueldoadd.setBounds(290, 300, 179, 41);
 
         txtnomadd.setBackground(new java.awt.Color(238, 238, 221));
         txtnomadd.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
@@ -525,14 +684,8 @@ public class Main extends javax.swing.JFrame {
                 txtnomaddtxtprodv1KeyTyped(evt);
             }
         });
-        ptrabadd.add(txtnomadd);
-        txtnomadd.setBounds(250, 140, 180, 41);
-
-        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel24.setText("Identificacion :");
-        ptrabadd.add(jLabel24);
-        jLabel24.setBounds(30, 210, 200, 50);
+        pus.add(txtnomadd);
+        txtnomadd.setBounds(290, 180, 180, 41);
 
         txtidenadd.setBackground(new java.awt.Color(238, 238, 221));
         txtidenadd.setFont(new java.awt.Font("Yu Gothic Medium", 0, 24)); // NOI18N
@@ -551,10 +704,45 @@ public class Main extends javax.swing.JFrame {
                 txtidenaddtxtprodv1KeyTyped(evt);
             }
         });
-        ptrabadd.add(txtidenadd);
-        txtidenadd.setBounds(250, 210, 179, 41);
+        pus.add(txtidenadd);
+        txtidenadd.setBounds(290, 240, 179, 41);
 
-        pcont3.add(ptrabadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 460, 510));
+        jLabel37.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel37.setText("X");
+        jLabel37.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel37MouseClicked(evt);
+            }
+        });
+        pus.add(jLabel37);
+        jLabel37.setBounds(540, 10, 20, 20);
+
+        ptrabadd.add(pus);
+        pus.setBounds(0, 0, 570, 530);
+
+        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Usuario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        ptrabadd.add(jButton1);
+        jButton1.setBounds(310, 200, 180, 110);
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 102));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Cliente");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        ptrabadd.add(jButton2);
+        jButton2.setBounds(90, 200, 170, 110);
+
+        pcont3.add(ptrabadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 570, 530));
 
         pfac.setBackground(new java.awt.Color(238, 238, 221));
         pfac.setLayout(null);
@@ -776,7 +964,7 @@ public class Main extends javax.swing.JFrame {
         new Object [][] {
         },
         new String [] {
-            "Identificaion","Nombre","Sueldo"
+            "Identificaion","Nombre","Correo","Numero"
         }
     )
     {public boolean isCellEditable(int row, int column){return false;}}
@@ -858,7 +1046,7 @@ public class Main extends javax.swing.JFrame {
     });
     plog.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 349, 197, -1));
 
-    jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-show-password-30.png"))); // NOI18N
+    jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/eye_30px.png"))); // NOI18N
     jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
         public void mouseClicked(java.awt.event.MouseEvent evt) {
             jLabel5MouseClicked(evt);
@@ -994,7 +1182,11 @@ int xx,xy;
     private void pvenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pvenMouseClicked
         ocul();
         ptrabadd.setVisible(true);
-        lblpag.setText("Agregar Trabajador");
+        lblpag.setText("Agregar");
+        pclii.setVisible(false);
+        pus.setVisible(false);
+        habb();
+                
     }//GEN-LAST:event_pvenMouseClicked
 
     private void pvenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pvenMouseEntered
@@ -1329,6 +1521,86 @@ public void fa(){
         // TODO add your handling code here:
     }//GEN-LAST:event_lblsubtMouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        dab.agregarCli(txtidencli.getText(),txtnomcli.getText(),txtpassadd1.getText(),txtuseradd1.getText());
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void txtpassadd1txtprodv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpassadd1txtprodv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpassadd1txtprodv1ActionPerformed
+
+    private void txtpassadd1txtprodv1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassadd1txtprodv1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpassadd1txtprodv1KeyReleased
+
+    private void txtpassadd1txtprodv1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassadd1txtprodv1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpassadd1txtprodv1KeyTyped
+
+    private void txtuseradd1txtprodv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuseradd1txtprodv2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuseradd1txtprodv2ActionPerformed
+
+    private void txtuseradd1txtprodv2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuseradd1txtprodv2KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuseradd1txtprodv2KeyReleased
+
+    private void txtuseradd1txtprodv2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtuseradd1txtprodv2KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtuseradd1txtprodv2KeyTyped
+
+    private void txtnomclitxtprodv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomclitxtprodv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnomclitxtprodv1ActionPerformed
+
+    private void txtnomclitxtprodv1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnomclitxtprodv1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnomclitxtprodv1KeyReleased
+
+    private void txtnomclitxtprodv1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnomclitxtprodv1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnomclitxtprodv1KeyTyped
+
+    private void txtidenclitxtprodv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidenclitxtprodv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidenclitxtprodv1ActionPerformed
+
+    private void txtidenclitxtprodv1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidenclitxtprodv1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidenclitxtprodv1KeyReleased
+
+    private void txtidenclitxtprodv1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidenclitxtprodv1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidenclitxtprodv1KeyTyped
+
+    private void jLabel37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel37MouseClicked
+        pus.setVisible(false);
+        habb();
+    }//GEN-LAST:event_jLabel37MouseClicked
+
+    private void jLabel38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel38MouseClicked
+        pclii.setVisible(false);
+        habb();
+    }//GEN-LAST:event_jLabel38MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        pus.setVisible(true);
+        desb();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        pclii.setVisible(true);
+        desb();
+    }//GEN-LAST:event_jButton2ActionPerformed
+    public void desb(){
+        jButton1.setVisible(false);
+        jButton2.setVisible(false);
+       
+    }
+     public void habb(){
+        jButton1.setVisible(true);
+        jButton2.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -1368,8 +1640,11 @@ public void fa(){
     private javax.swing.JButton btfac;
     private javax.swing.JComboBox<String> cmbtipocon;
     private javax.swing.JComboBox<String> cmbtipofac1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1385,11 +1660,17 @@ public void fa(){
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1409,6 +1690,7 @@ public void fa(){
     private javax.swing.JPanel panelIZ;
     private javax.swing.JPanel pcen;
     private javax.swing.JPanel pclientefac;
+    private javax.swing.JPanel pclii;
     private javax.swing.JPanel pcont3;
     private javax.swing.JPanel pcontr;
     private javax.swing.JPanel pcosas;
@@ -1418,6 +1700,7 @@ public void fa(){
     private javax.swing.JPanel pitfac;
     private javax.swing.JPanel plog;
     private javax.swing.JPanel ptrabadd;
+    private javax.swing.JPanel pus;
     private javax.swing.JPanel pven;
     private javax.swing.JPanel pven1;
     private javax.swing.JPanel pven2;
@@ -1433,13 +1716,17 @@ public void fa(){
     private javax.swing.JTextField txtcodcon;
     private javax.swing.JTextField txtdescon;
     private javax.swing.JTextField txtidenadd;
+    private javax.swing.JTextField txtidencli;
     private javax.swing.JTextField txtnomadd;
+    private javax.swing.JTextField txtnomcli;
     private javax.swing.JPasswordField txtpass;
     private javax.swing.JTextField txtpassadd;
+    private javax.swing.JTextField txtpassadd1;
     private javax.swing.JTextField txtpreciocon;
     private javax.swing.JTextField txtsueldoadd;
     private javax.swing.JTextField txtuser;
     private javax.swing.JTextField txtuseradd;
+    private javax.swing.JTextField txtuseradd1;
     // End of variables declaration//GEN-END:variables
 
     private void tap2(Object selectedItem) {
