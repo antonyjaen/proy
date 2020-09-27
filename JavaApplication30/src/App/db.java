@@ -275,7 +275,7 @@ public class db {
             }
             if (pas == largo) {//si los puntos es igual al largo se agrega a la tabla
                 modelo.addRow(list);
-                tabla.setModel(modelo);
+                tabla.setModel(modelo);//
             }
         }
     }
