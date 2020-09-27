@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication30;
+package App;
 
 import Animacion.Animacion;
 import com.mongodb.BasicDBObject;
@@ -1198,16 +1198,8 @@ int xx,xy;
     }//GEN-LAST:event_pvenMouseExited
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        lblicon.setVisible(true);
-                plog.setVisible(false);
-                pcen.setVisible(true);
-                panelIZ.setVisible(true);
-                ocul();
-                //pcont3.setVisible(false);
-                //pvent1.setVisible(true);
-                //lblimg.setVisible(false);
-                lblpag.setText("Bienvenido");
-        /*try {
+                
+        try {
             int ok = dab.log(txtuser.getText(),txtpass.getText());
             if (ok==1) {
                 lblicon.setVisible(true);
@@ -1215,17 +1207,16 @@ int xx,xy;
                 pcen.setVisible(true);
                 panelIZ.setVisible(true);
                 ocul();
-                //pcont3.setVisible(false);
-                //pvent1.setVisible(true);
-                //lblimg.setVisible(false);
-                lblpag.setText("Bienvenido");
+                pcontr.setVisible(true);  
+                //Animacion.mover_izquierda(940, 80, 1, 2, pcontr); 
+                lblpag.setText("Control de Produccion");
             }else{
              JOptionPane.showMessageDialog(null, "Error en los datos");
             }
         } catch (Exception e) {
             //error de datos
             JOptionPane.showMessageDialog(null, "Error del sistema");
-        }*/
+        }
  
     }//GEN-LAST:event_jLabel2MouseClicked
 
@@ -1315,7 +1306,7 @@ public void fa(){
         //Animacion.mover_izquierda(940, 80, 1, 2, pcontr); 
         lblpag.setText("Facturacion");
         dab.tab2(tabla1,"escritorios",txtc,txtbus2);
-         pffac.setVisible(false);
+        pffac.setVisible(false);
 }
     private void pven2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pven2MouseClicked
         fa();
